@@ -5,7 +5,7 @@ const MAX_AMOUNT_NUM = 6;
 
 const COMPUTER_NUMBER_STR = getRandomNumStr();
 
-console.log(`number of ${COMPUTER_NUMBER_STR.length} characters\n`)
+console.log(`number of ${COMPUTER_NUMBER_STR.length} characters\n`);
 
 // console.log(`this number is ${COMPUTER_NUMBER_STR}`);
 
@@ -27,11 +27,11 @@ while (!win && tries) {
     let correctInput = validateUserInput(userInput);
     if (correctInput) {
         compareNumbers(userInput);
-        if (!win) console.log(`${--tries} tries left\n`);
+        if (!win) {console.log(`${--tries} tries left\n`);}
     }
 }
 
-if (tries === 0) console.log('the tries are over');
+if (tries === 0) {console.log('the tries are over');}
 
 // Получение случайного количества цифр от MIN_AMOUNT_NUM до MAX_AMOUNT_NUM
 function getRandomAmount(min, max) {
@@ -50,7 +50,7 @@ function getRandomNumStr() {
             // Первый digit может получиться равным 10 (2 знака)
             amountNum -= digit.toString().length;
         }
-    };
+    }
     return numberStr;
 }
 
@@ -59,7 +59,7 @@ function validateUserInput(userInput) {
         if (userInput.length === COMPUTER_NUMBER_STR.length) {
             for (let i = 0; i < userInput.length; i++) {
                 if ((userInput.split(userInput[i]).length - 1) > 1){
-                    console.log('digits in a number cannot be repeated')
+                    console.log('digits in a number cannot be repeated');
                     return false;
                 }
             }
